@@ -9,7 +9,17 @@ GHG Tracker Database is written entirely in Python to facilitate easier collabor
 ## Database Setup
 
 We use Docker and Docker Compose to setup the database.
-First define envionrment variables for postgres databse in `./.env`
+First define envionrment variables for postgres databse in `./.env`. The `.env` should look like this if developing locally:
+
+```sh
+POSTGRES_USER="postgres"
+POSTGRES_PASSWORD="postgres"
+POSTGRES_DB="ghgtracker"
+POSTGRES_PORT="5432"
+POSTGRES_HOST="localhost"
+DATABASE_URL="postgresql://postgres:postgres@127.0.0.1:5432/ghgtracker"
+```
+
 Use the following command to start a database in a container and expose it on localhost port 5432.
 
 ```sh
