@@ -1,0 +1,31 @@
+datasources:
+  - name: actors
+    path: data/actors
+    depends_on: []
+  - name: gas
+    path: data/gas
+    depends_on: []
+  - name: gwp
+    path: data/gwp
+    depends_on: [gas]
+  - name: sector
+    path: data/sector
+    depends_on: []
+  - name: emissions_total_exlulu
+    path: data/emissions_total_exlulu
+    depends_on: [actors]
+  - name: emissions_by_sector
+    path: data/emissions
+    depends_on: [actors, sector]
+  - name: targets
+    path: data/targets
+    depends_on: [actors]
+  - name: population
+    path: data/population
+    depends_on: [actors]
+  - name: gdp
+    path: data/gdp
+    depends_on: [actors]
+  - name: energy_consumption
+    path: data/energy_consumption
+    depends_on: [actors]
